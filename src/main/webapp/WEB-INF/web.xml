@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>JEE training project implementation by Vasiliy Koltovich</display-name>
+
+ 
+ 
+<filter>
+		<filter-name>AccessFilter</filter-name>
+		<filter-class>com.epam.issuetracker.AdminFilter.AuthentificationFilter</filter-class>
+	</filter>
+  
+	<filter-mapping>
+		<filter-name>AccessFilter</filter-name>
+		<url-pattern>/dash.jsp</url-pattern>
+		<url-pattern>/viewissue.jsp</url-pattern>
+		<url-pattern>/modifyissue.jsp</url-pattern>
+		  <url-pattern>/adminpage.jsp</url-pattern>
+		  
+		<servlet-name>AdminController</servlet-name>
+		<servlet-name>MainController</servlet-name>
+	</filter-mapping>
+    
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>MainController</display-name>
+		<servlet-name>MainController</servlet-name>
+		<servlet-class>com.epam.issuetracker.MainController</servlet-class>
+		<init-param>
+			<param-name>show</param-name>
+			<param-value>5</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogInController</display-name>
+		<servlet-name>LogInController</servlet-name>
+		<servlet-class>com.epam.issuetracker.LoginController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>DummyController</display-name>
+		<servlet-name>DummyController</servlet-name>
+		<servlet-class>com.epam.issuetracker.DummyController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogOutController</display-name>
+		<servlet-name>LogOutController</servlet-name>
+		<servlet-class>com.epam.issuetracker.LogOutController</servlet-class>
+	</servlet>
+
+<servlet>
+		<description>
+		</description>
+		<display-name>SearchController</display-name>
+		<servlet-name>SearchController</servlet-name>
+		<servlet-class>com.epam.issuetracker.SearchController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminController</display-name>
+		<servlet-name>AdminController</servlet-name>
+		<servlet-class>com.epam.issuetracker.AdminController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>ProjectController</display-name>
+		<servlet-name>ProjectController</servlet-name>
+		<servlet-class>com.epam.issuetracker.ProjectController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>ProjectModify</display-name>
+		<servlet-name>ProjectModify</servlet-name>
+		<servlet-class>com.epam.issuetracker.ProjectModify</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>IssuesController</display-name>
+		<servlet-name>IssuesController</servlet-name>
+		<servlet-class>com.epam.issuetracker.IssuesController</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>IssueController</display-name>
+		<servlet-name>IssueController</servlet-name>
+		<servlet-class>com.epam.issuetracker.IssueController</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>AttachmentDownloading</display-name>
+		<servlet-name>AttachmentDownloading</servlet-name>
+		<servlet-class>com.epam.issuetracker.AttachmentDownloading</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>AttachmentUploading</display-name>
+		<servlet-name>AttachmentUploading</servlet-name>
+		<servlet-class>com.epam.issuetracker.AttachmentUploading</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>SubmitActivity</display-name>
+		<servlet-name>SubmitActivity</servlet-name>
+		<servlet-class>com.epam.issuetracker.SubmitActivity</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>SubmitIssue</display-name>
+		<servlet-name>SubmitIssue</servlet-name>
+		<servlet-class>com.epam.issuetracker.SubmitIssue</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>ModifyIssue</display-name>
+		<servlet-name>ModifyIssue</servlet-name>
+		<servlet-class>com.epam.issuetracker.ModifyIssue</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddIssue</display-name>
+		<servlet-name>AddIssue</servlet-name>
+		<servlet-class>com.epam.issuetracker.AddIssue</servlet-class>
+	</servlet>
+	
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddProject</display-name>
+		<servlet-name>AddProject</servlet-name>
+		<servlet-class>com.epam.issuetracker.AddProject</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddEmployee</display-name>
+		<servlet-name>AddEmployee</servlet-name>
+		<servlet-class>com.epam.issuetracker.AddEmployee</servlet-class>
+	</servlet>
+	
+<servlet>
+		<description>
+		</description>
+		<display-name>EmployeeController</display-name>
+		<servlet-name>EmployeeController</servlet-name>
+		<servlet-class>com.epam.issuetracker.EmployeeController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>XMLController</display-name>
+		<servlet-name>XMLController</servlet-name>
+		<servlet-class>com.epam.issuetracker.XMLController</servlet-class>
+	</servlet>
+	
+<servlet>
+		<description>
+		</description>
+		<display-name>SubmitEmployee</display-name>
+		<servlet-name>SubmitEmployee</servlet-name>
+		<servlet-class>com.epam.issuetracker.SubmitEmployee</servlet-class>
+	</servlet>
+
+<servlet>
+		<description>
+		</description>
+		<display-name>SubmitProject</display-name>
+		<servlet-name>SubmitProject</servlet-name>
+		<servlet-class>com.epam.issuetracker.SubmitProject</servlet-class>
+	</servlet>
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>MainController</servlet-name>
+		<url-pattern>/MainController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DummyController</servlet-name>
+		<url-pattern>/DummyController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LogInController</servlet-name>
+		<url-pattern>/LogInController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LogOutController</servlet-name>
+		<url-pattern>/LogOutController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SearchController</servlet-name>
+		<url-pattern>/SearchController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AdminController</servlet-name>
+		<url-pattern>/AdminController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ProjectController</servlet-name>
+		<url-pattern>/ProjectController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ProjectModify</servlet-name>
+		<url-pattern>/ProjectModify</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>IssuesController</servlet-name>
+		<url-pattern>/IssuesController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EmployeeController</servlet-name>
+		<url-pattern>/EmployeeController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>XMLController</servlet-name>
+		<url-pattern>/XMLController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SubmitEmployee</servlet-name>
+		<url-pattern>/SubmitEmployee</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SubmitProject</servlet-name>
+		<url-pattern>/SubmitProject</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>IssueController</servlet-name>
+		<url-pattern>/IssueController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AttachmentDownloading</servlet-name>
+		<url-pattern>/AttachmentDownloading</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AttachmentUploading</servlet-name>
+		<url-pattern>/AttachmentUploading</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ModifyIssue</servlet-name>
+		<url-pattern>/ModifyIssue</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddIssue</servlet-name>
+		<url-pattern>/AddIssue</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AddProject</servlet-name>
+		<url-pattern>/AddProject</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AddEmployee</servlet-name>
+		<url-pattern>/AddEmployee</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SubmitIssue</servlet-name>
+		<url-pattern>/SubmitIssue</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SubmitActivity</servlet-name>
+		<url-pattern>/SubmitActivity</url-pattern>
+	</servlet-mapping>
+
+<session-config>
+    <session-timeout>
+    2000
+    </session-timeout>
+</session-config>
+
+	<resource-ref>
+		<description>DBTConnection</description>
+		<res-ref-name>jdbc/DbTomcat</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<welcome-file-list>
+		<welcome-file>loginpage.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/log4j2.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>tempUploadDirectory</param-name>
+		<param-value>c:/temporary</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>destinationUploadDirectory</param-name>
+		<param-value>\\attachments</param-value>
+	</context-param>
+
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+		</jsp-property-group>
+	</jsp-config>
+
+
+
+</web-app>

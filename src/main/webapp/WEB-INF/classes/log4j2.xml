@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-6p [%c] %X{server.context} %m%n" />
+		</Console>
+
+		<File name="MyFile" fileName="tracker_log/issues.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d %-6p [%c] %X{server.context} %m%n"/>
+        </File>
+    </Appenders>
+    
+     <Loggers>
+    <Logger name="logF" level="debug" >
+     <AppenderRef ref="MyFile"/>
+    </Logger> 
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MyFile"/>
+        </Root>
+
+	</Loggers>
+</Configuration>
+
+
+
+	
